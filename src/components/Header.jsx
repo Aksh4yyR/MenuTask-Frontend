@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../assets/deepnetlogo.png';
-import { NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Header = () => {
   return (
@@ -15,10 +15,18 @@ const Header = () => {
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link className="ms-3" href="/home">Add Menu</Nav.Link>
-              <Nav.Link className="ms-3" href="/">Menu</Nav.Link>
-              <Nav.Link className="ms-3" href="/pricing">Make a Reservation</Nav.Link>
-              <Nav.Link className="ms-3" href="/contact">Contact Us</Nav.Link>
+              <Nav.Link className="ms-3">
+                <Link to="/home" style={{ color: 'inherit', textDecoration: 'none' }}>Add Menu</Link>
+              </Nav.Link>
+              <Nav.Link className="ms-3">
+                <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Menu</Link>
+              </Nav.Link>
+              <Nav.Link className="ms-3">
+                <Link to="/home" style={{ color: 'inherit', textDecoration: 'none' }}>Make a Reservation</Link>
+              </Nav.Link>
+              <Nav.Link className="ms-3">
+                <Link to="/home" style={{ color: 'inherit', textDecoration: 'none' }}>Contact Us</Link>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
